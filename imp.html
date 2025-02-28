@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suat's Homepage</title>
+  <!-- Materialize CSS CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  
+  <!-- Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  <!-- Custom CSS for Animation and Layout -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 100%; 
+      height: auto;
+      margin-top: 20px;
+      padding: 20px;
+      text-align: center;
+      background-color: white;
+    }
+
+    p {
+      font-size: 18px; 
+      color: black; 
+    }
+	
+    iframe {
+      width: 100%;  /* Volle Breite des übergeordneten Containers */
+      height: 450px; /* Feste Höhe */
+      border: 0;
+    }
+	
+	#infoText {
+		margin-top: 10px;
+		font-size: 50px;
+		opacity: 1;
+		transition: opacity 2s;
+		display: flex;
+		justify-content: center;
+        align-items: center;
+	}
+	
+	.map-card {
+      padding: 0;  /* Kein Padding innerhalb der Karte */
+    }
+	
+    .card-content {
+      text-align: left;
+    }
+
+    .card-content p {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center; /* Vertikale Ausrichtung des Icons und Texts */
+    }
+
+    .card-content i {
+      color: green; /* Farbe des Häkchens */
+      margin-right: 10px; /* Abstand zwischen Icon und Text */
+    }
+	
+	.containerHeader {
+		margin-top: 10px;
+		background-color: #034efc;
+		padding: 30px;
+		border-radius: 10px;
+		animation: zoomIn 1.5s ease-out;
+		position: relative;
+		overflow: hidden; 
+	}
+	@keyframes zoomIn {
+		from { opacity: 0; transform: scale(0.8); }
+		to { opacity: 1; transform: scale(1); }
+	}
+	.header {
+		text-align: center;
+		margin-bottom: 30px;
+	}
+	.header h1 {
+		font-size: 3rem;
+	}
+	
+	.cardAnimation {
+		transition: transform 0.3s ease, box-shadow 0.3s ease;
+	}
+
+	.cardAnimation:hover {
+		transform: scale(1.05); /* Vergrößert die Karte leicht */
+		box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Fügt einen Schatten hinzu */
+	}
+	
+    .snowflake {
+      position: absolute;
+      top: -50px;
+      color: white;
+      font-size: 1em;
+      opacity: 0.8;
+      user-select: none;
+    }
+
+	.gradient-shadow {
+        font-family: 'Merriweather', cursive; /* Verwenden der Lobster-Schriftart */
+		font-style: italic; /* Kursiv */
+		font-size: 48px;                  /* Schriftgröße */
+		background: linear-gradient(45deg, #3498db, #e74c3c); /* Farbverlauf von Blau nach Rot */
+		-webkit-background-clip: text;    /* Wendet den Hintergrund nur auf den Text an (nur in Webkit-Browsern) */
+		color: transparent;               /* Textfarbe transparent, da der Verlauf den Text färbt */
+		text-align: center;               /* Zentrierte Ausrichtung */
+		font-weight: bold;                /* Fettschrift */
+		padding: 10px;                    /* Innenabstand */
+		text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4); /* Textschatten für 3D-Effekt */
+	}	
+
+	
+  </style>
+
+  <!-- Favicon -->
+  <link rel="icon" href="path/to/favicon.ico" type="image/x-icon">
+</head>
+<body>
+  
+  <!-- Navigation -->
+    <div class="navbar-fixed">
+	  <nav>
+		<div class="nav-wrapper" style="background-color: #034efc;">
+		  <a href="index.html" class="gradient-shadow">Gaar_MSC</a>
+		  <a href="#" data-target="mobile-nav" class="sidenav-trigger right"><i class="material-icons" style="font-size: 48px;">menu</i></a>
+		  <ul id="nav-mobile" class="right hide-on-med-and-down">
+			<li><a href="index.html">Home</a></li>		
+			<li><a href="imp.html">Impressum</a></li>
+			<li><a href="ds.html">Datenschutz</a></li>
+		  </ul>
+		</div>
+	  </nav>
+	</div>
+
+  <!-- Side Navigation for Mobile -->
+  <ul class="sidenav" id="mobile-nav">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="imp.html">Impressum</a></li>
+    <li><a href="ds.html">Datenschutz</a></li>
+  </ul>
+  
+  <!-- Content -->
+  <div class="container">
+  
+    <h1>Impressum</h1>
+    
+    <h2>Angaben gemäß § 5 TMG</h2>
+    <p>Gaar_MSC<br>
+    Einzelunternehmen<br>
+    Feuervogelweg 5<br>
+    44269 Dortmund</p>
+
+    <h2>Vertreten durch</h2>
+    <p>Melek Cetin</p>
+
+    <h2>Kontakt</h2>
+    <p>Telefon: 0151/12313007<br>
+    E-Mail: <a href="mailto:info@gaarmsc.de">info@gaarmsc.de<br>
+    Webseite: <a href="[Ihre Webseite]">[Ihre Webseite]</a></p>
+
+    <h2>Umsatzsteuer-ID</h2>
+    <p>Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz: 315/5038/5965</p>
+
+    <h2>Haftungsausschluss</h2>
+    <p>Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen.</p>
+
+    <h2>Haftung für Links</h2>
+    <p>Unsere Website enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.</p>
+
+    <h2>Urheberrecht</h2>
+    <p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechts bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.</p>
+
+    <p><strong>Stand: 10.02.2025</strong></p>
+	
+  </div>
+
+  <!-- Materialize JavaScript CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  
+    <!-- Custom JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('.sidenav');
+      var instances = M.Sidenav.init(elems, {});
+    });
+  </script>  
+</body>
+</html>

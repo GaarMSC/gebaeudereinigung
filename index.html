@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suat's Homepage</title>
+  <!-- Materialize CSS CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  
+  <!-- Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  <!-- Custom CSS for Animation and Layout -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 100%; 
+      height: auto;
+      margin-top: 20px;
+      padding: 20px;
+      text-align: center;
+      background-color: white;
+    }
+
+    p {
+      font-size: 18px; 
+      color: black; 
+    }
+	
+    iframe {
+      width: 100%;  /* Volle Breite des übergeordneten Containers */
+      height: 450px; /* Feste Höhe */
+      border: 0;
+    }
+	
+	#infoText {
+		margin-top: 10px;
+		font-size: 50px;
+		opacity: 1;
+		transition: opacity 2s;
+		display: flex;
+		justify-content: center;
+        align-items: center;
+	}
+	
+	.map-card {
+      padding: 0;  /* Kein Padding innerhalb der Karte */
+    }
+	
+    .card-content {
+      text-align: left;
+    }
+
+    .card-content p {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center; /* Vertikale Ausrichtung des Icons und Texts */
+    }
+
+    .card-content i {
+      color: green; /* Farbe des Häkchens */
+      margin-right: 10px; /* Abstand zwischen Icon und Text */
+    }
+	
+	.containerHeader {
+		margin-top: 10px;
+		background-color: #034efc;
+		padding: 30px;
+		border-radius: 10px;
+		animation: zoomIn 1.5s ease-out;
+		position: relative;
+		overflow: hidden; 
+	}
+	@keyframes zoomIn {
+		from { opacity: 0; transform: scale(0.8); }
+		to { opacity: 1; transform: scale(1); }
+	}
+	.header {
+		text-align: center;
+		margin-bottom: 30px;
+	}
+	.header h1 {
+		font-size: 3rem;
+	}
+	
+	.cardAnimation {
+		transition: transform 0.3s ease, box-shadow 0.3s ease;
+	}
+
+	.cardAnimation:hover {
+		transform: scale(1.05); /* Vergrößert die Karte leicht */
+		box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Fügt einen Schatten hinzu */
+	}
+	
+    .snowflake {
+      position: absolute;
+      top: -50px;
+      color: white;
+      font-size: 1em;
+      opacity: 0.8;
+      user-select: none;
+    }
+
+	.gradient-shadow {
+        font-family: 'Merriweather', cursive; /* Verwenden der Lobster-Schriftart */
+		font-style: italic; /* Kursiv */
+		font-size: 48px;                  /* Schriftgröße */
+		background: linear-gradient(45deg, #3498db, #e74c3c); /* Farbverlauf von Blau nach Rot */
+		-webkit-background-clip: text;    /* Wendet den Hintergrund nur auf den Text an (nur in Webkit-Browsern) */
+		color: transparent;               /* Textfarbe transparent, da der Verlauf den Text färbt */
+		text-align: center;               /* Zentrierte Ausrichtung */
+		font-weight: bold;                /* Fettschrift */
+		padding: 10px;                    /* Innenabstand */
+		text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4); /* Textschatten für 3D-Effekt */
+	}
+
+	.gradient-shadow2 {
+        font-family: 'Merriweather', cursive; /* Verwenden der Lobster-Schriftart */
+		font-style: italic; /* Kursiv */
+		font-size: 24px;                  /* Schriftgröße */
+		background: linear-gradient(45deg, #3498db, #e74c3c); /* Farbverlauf von Blau nach Rot */
+		-webkit-background-clip: text;    /* Wendet den Hintergrund nur auf den Text an (nur in Webkit-Browsern) */
+		color: transparent;               /* Textfarbe transparent, da der Verlauf den Text färbt */
+		text-align: center;               /* Zentrierte Ausrichtung */
+		font-weight: bold;                /* Fettschrift */
+		padding: 10px;                    /* Innenabstand */
+		text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4); /* Textschatten für 3D-Effekt */
+	}		
+
+	
+  </style>
+
+  <!-- Favicon -->
+  <link rel="icon" href="path/to/favicon.ico" type="image/x-icon">
+</head>
+<body>
+  
+  <!-- Navigation -->
+    <div class="navbar-fixed">
+	  <nav>
+		<div class="nav-wrapper" style="background-color: #034efc;">
+		  <a href="index.html" class="gradient-shadow2">Gebäudereinigung und Dienstleistungen</a>
+		  <a href="#" data-target="mobile-nav" class="sidenav-trigger right"><i class="material-icons" style="font-size: 48px;">menu</i></a>
+		  <ul id="nav-mobile" class="right hide-on-med-and-down">
+			<li><a href="index.html">Home</a></li>	
+			<li><a href="imp.html">Impressum</a></li>
+			<li><a href="ds.html">Datenschutz</a></li>
+		  </ul>
+		</div>
+	  </nav>
+	</div>
+
+  <!-- Side Navigation for Mobile -->
+  <ul class="sidenav" id="mobile-nav">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="imp.html">Impressum</a></li>
+    <li><a href="ds.html">Datenschutz</a></li>
+  </ul>
+  
+	<div id="infoText"> 
+	</div>
+  
+   <div class="containerHeader"> 
+	  <div class="header">
+		<h1 class="gradient-shadow">Gaar_MSC</h1>
+	  </div>
+    </div>
+
+  <div class="container">
+    <div class="row">
+      <!-- Card 1: Erste Hilfe Kurse -->
+      <div class="col s12 m6"> <!-- s12 für kleine Geräte, m6 für mittlere und größere Geräte -->
+        <div class="card cardAnimation">
+          <div class="card-content">
+            <span class="card-title">Seit über 30 Jahren mit Kompetenz voraus</span>			
+			  <p><i class="material-icons">check</i>Gebäudereinigung</p>
+			  <p><i class="material-icons">check</i>Unterhaltsreinigung</p>			  
+			  <p><i class="material-icons">check</i>Bausabschlussreinigung</p>
+			  <p><i class="material-icons">check</i>Fensterreinigung</p>
+			  <p><i class="material-icons">check</i>Steinflächen</p>
+			  <p><i class="material-icons">check</i>Fußböden (Twisterverfahren)</p>
+			  <p><i class="material-icons">check</i>Photovoltaikanlagen</p>
+			  <p><i class="material-icons">check</i>Osmoseverfahren</p>
+			  <p><i class="material-icons">check</i>Winterdienst</p>
+			  
+          </div>
+        </div>
+      </div>
+      
+      <!-- Card 2: Hüseyin Bicer -->
+      <div class="col s12 m6"> <!-- s12 für kleine Geräte, m6 für mittlere und größere Geräte -->
+        <div class="card cardAnimation">
+          <div class="card-content">
+            <span class="card-title">Sowie Reinigung von</span>
+			  <p><i class="material-icons">check</i>Treppenhäusern</p>			
+			  <p><i class="material-icons">check</i>Glasdächern</p>			  
+			  <p><i class="material-icons">check</i>Terassen und Bakonen</p>
+			  <p><i class="material-icons">check</i>Jalousien</p>
+			  <p><i class="material-icons">check</i>Schaufenstern</p>
+			  <p><i class="material-icons">check</i>Wintergärten</p>	
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Materialize JavaScript CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+  <!-- Custom JavaScript -->
+  <script>
+  
+	  var divHeader = document.querySelector('.containerHeader');
+	  
+	  document.addEventListener('DOMContentLoaded', function() {
+		 var elems = document.querySelectorAll('.sidenav');
+		 var instances = M.Sidenav.init(elems, {});
+			 
+		 divHeader.addEventListener('animationend', function() {
+		 createSnowflake();
+			// Schneeflocken regelmäßig erstellen
+			setInterval(createSnowflake, 150); // Häufigkeit der Schneeflocken erhöhen
+		});
+		 
+		 animateInfoText();		 		 
+	  });
+	  
+	  const schlagwoerter = [
+		"Sauberkeit auf höchstem Niveau",
+		"Erfahrene Reinigungskräfte",
+		"Faire Preise",
+		"Individuelle Reinigungslösungen",
+		"Kundenzufriedenheit",
+		"Professionelle Reinigung",
+		"Gebäudereinigung"
+		];
+	
+	  function createSnowflake() {
+		const snowflake = document.createElement("div");
+		snowflake.classList.add("snowflake");
+		snowflake.textContent = schlagwoerter[Math.floor(Math.random() * schlagwoerter.length)];
+
+		// Zufällige Startposition, Größe und Transparenz
+		snowflake.style.left = `${Math.random() * window.innerWidth}px`;
+		snowflake.style.fontSize = `${Math.random() * 20 + 10}px`; // Größen zwischen 10px und 30px
+		snowflake.style.opacity = Math.random() * 0.5 + 0.5; // Opazität zwischen 0.5 und 1
+
+		// Animationen zufällig generieren
+		const duration = Math.random() * 5000 + 3000; // Dauer zwischen 3s und 8s
+		const delay = Math.random() * 3000; // Zufälliger Startzeitpunkt (Verzögerung)
+		const horizontalDrift = Math.random() * 100 - 50; // Zufällige Drift (links/rechts)
+		const windStrength = Math.random() * 100 + 50; // Stärke des Winds (Schwanken nach links und rechts)
+
+
+		divHeader.appendChild(snowflake);
+
+		// Animationsablauf der Schneeflocken mit Wind-Effekt
+		const keyframes = [
+		  { 
+			transform: `translate(${horizontalDrift}px, 0px) rotate(${Math.random() * 360}deg)` 
+		  },
+		  { 
+			transform: `translate(${horizontalDrift + Math.sin(0.5) * windStrength}px, ${window.innerHeight}px) rotate(${Math.random() * 360}deg)` 
+		  }
+		];
+
+		snowflake.animate(keyframes, {
+		  duration: duration,
+		  delay: delay,
+		  iterations: 1,
+		  easing: 'ease-in-out' // Sanfte Beschleunigung
+		}).onfinish = () => {
+		  snowflake.remove(); // Schneeflocke nach Animation entfernen
+		};
+	}
+
+
+	
+	const textElement = document.getElementById('infoText');
+        
+	function getRandomColor() {
+		const letters = '0123456789ABCDEF';
+		let color = '#';
+		for (let i = 0; i < 6; i++) {
+			color += letters[Math.floor(Math.random() * 16)];
+		}
+		return color;
+	}
+
+	function animateInfoText() {
+		textElement.textContent = schlagwoerter[Math.floor(Math.random() * schlagwoerter.length)];
+		textElement.style.color = "black";
+		textElement.style.opacity = 1;
+
+		setTimeout(() => {
+			textElement.style.opacity = 0;
+		}, 2000);
+
+		setTimeout(() => {
+			animateInfoText();
+		}, 4000);
+	}
+
+  </script>
+</body>
+</html>
