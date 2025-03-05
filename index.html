@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suat's Homepage</title>
+  <title>Firma Gaar_MSC Gebaeudereinigung</title>
+  <meta name="description" content="Firma Gebaeudereinigung Dienstleistungen Dortmund Bottrop Melek Cetin Gaar_MSC Reinigung professionell günstig preiswert Unterhaltsreinigung Bausabschlussreinigung Fensterreinigung">
+  <meta name="keywords" content="Firma Gebaeudereinigung Dienstleistungen Dortmund Bottrop Melek Cetin Gaar_MSC Reinigung professionell günstig preiswert Unterhaltsreinigung Bausabschlussreinigung Fensterreinigung">
   <!-- Materialize CSS CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   
@@ -155,7 +157,8 @@
     <div class="navbar-fixed">
 	  <nav>
 		<div class="nav-wrapper" style="background-color: #034efc;">
-		  <a href="index.html" class="gradient-shadow2">Gebäudereinigung und Dienstleistungen</a>
+		   <!-- <a href="index.html" class="gradient-shadow2">Ihr Partner für professionelle Gebäudereinigung und Dienstleistungen</a> -->
+		  <span class="gradient-shadow2">Gebäudereinigung und Dienstleistungen</span>		   
 		  <a href="#" data-target="mobile-nav" class="sidenav-trigger right"><i class="material-icons" style="font-size: 48px;">menu</i></a>
 		  <ul id="nav-mobile" class="right hide-on-med-and-down">
 			<li><a href="index.html">Home</a></li>	
@@ -184,7 +187,7 @@
 
   <div class="container">
     <div class="row">
-      <!-- Card 1: Erste Hilfe Kurse -->
+      <!-- Card 1: Gebäudereinigung -->
       <div class="col s12 m6"> <!-- s12 für kleine Geräte, m6 für mittlere und größere Geräte -->
         <div class="card cardAnimation">
           <div class="card-content">
@@ -203,7 +206,7 @@
         </div>
       </div>
       
-      <!-- Card 2: Hüseyin Bicer -->
+      <!-- Card 2: Reinigung -->
       <div class="col s12 m6"> <!-- s12 für kleine Geräte, m6 für mittlere und größere Geräte -->
         <div class="card cardAnimation">
           <div class="card-content">
@@ -218,6 +221,20 @@
         </div>
       </div>
     </div>
+    <div class="row">
+      <!-- Card 3: Kontaktdaten -->
+      <div class="col s12 m6"> <!-- s12 für kleine Geräte, m6 für mittlere und größere Geräte -->
+        <div class="card cardAnimation">
+          <div class="card-content">
+            <span class="card-title">Kontaktieren Sie uns <br>Wir freuen uns auf Ihre Anfrage!</span>			
+			  <p><i class="material-icons">check</i>Bei Fragen oder Anliegen stehen wir Ihnen gerne zur Verfügung.</p>
+			  <!-- <p><i class="material-icons">check</i>Nutzen Sie die untenstehenden Kontaktmöglichkeiten, um mit uns in Verbindung zu treten.</p> -->			  
+			  <p><i class="material-icons">check</i>Telefon: 0151/12313007</p>
+			  <p><i class="material-icons">check</i>E-Mail: <a href="mailto:info@gaarmsc.de">info@gaarmsc.de</a></p>			  
+          </div>
+        </div>
+      </div>
+    </div>	  
   </div>
   
   <!-- Materialize JavaScript CDN -->
@@ -231,11 +248,23 @@
 	  document.addEventListener('DOMContentLoaded', function() {
 		 var elems = document.querySelectorAll('.sidenav');
 		 var instances = M.Sidenav.init(elems, {});
+		 
+		 		 // Funktion, um die Intervalle basierend auf der Bildschirmgröße zu setzen
+		 function getSnowflakeInterval() {
+			if (window.matchMedia('(max-width: 600px)').matches) {
+				return 300; // Weniger Schneeflocken bei kleinen Bildschirmen
+			} else if (window.matchMedia('(max-width: 1024px)').matches) {
+				return 200; // Mittelmäßige Häufigkeit
+			} else {
+				return 150; // Standard-Häufigkeit bei großen Bildschirmen
+			}
+		 }
 			 
 		 divHeader.addEventListener('animationend', function() {
 		 createSnowflake();
-			// Schneeflocken regelmäßig erstellen
-			setInterval(createSnowflake, 150); // Häufigkeit der Schneeflocken erhöhen
+			// Schneeflocken in regelmäßigen Abständen erstellen
+			let snowflakeInterval = getSnowflakeInterval();
+			setInterval(createSnowflake, snowflakeInterval);
 		});
 		 
 		 animateInfoText();		 		 
@@ -294,15 +323,6 @@
 	
 	const textElement = document.getElementById('infoText');
         
-	function getRandomColor() {
-		const letters = '0123456789ABCDEF';
-		let color = '#';
-		for (let i = 0; i < 6; i++) {
-			color += letters[Math.floor(Math.random() * 16)];
-		}
-		return color;
-	}
-
 	function animateInfoText() {
 		textElement.textContent = schlagwoerter[Math.floor(Math.random() * schlagwoerter.length)];
 		textElement.style.color = "black";
